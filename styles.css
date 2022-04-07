@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Almarai', sans-serif;
+}
+
+.container {
+  display: flex;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.image-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-list-item {
+  width: 100%;
+  height: auto;
+  display: none;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.image-list-item[data-active] {
+  display: contents;
+  transition-delay: 0ms;
+}
+
+.image-list-item img {
+  object-position: top;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: fade .8s linear;
+  animation: fade .8s linear ;
+}
+
+.right-container {
+  width: 50%;
+  padding: 40px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.description-container {
+  display: flex;
+  display: flex;
+  align-items: center;
+  -webkit-animation: fade .8s linear;
+  animation: fade .8s linear ;
+}
+
+.description-container hr {
+  width: 80px;
+  border: 2px solid #fff;
+}
+
+.description-container button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 0 6px;
+}
+
+.description-container button i {
+  color: #fff;
+  font-size: 25px;
+}
+
+.carousel-dots {
+  display: flex;
+}
+
+.carousel-dots i {
+  font-size: 10px;
+  margin: 0 4px;
+  color: #5f5f5f;
+  cursor: pointer;
+}
+
+.active-dot::before {
+  color: #ffffff;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.description {
+  margin-bottom: 50px;
+  min-height: 50vh;
+  display: none;
+  opacity: 0;
+  transition: 200ms opacity ease-in-out;
+  transition-delay: 200ms;
+}
+
+.description[data-active] {
+  display: contents;
+  opacity: 1;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
+.description h3 {
+  font-weight: 400;
+}
+
+.description i {
+  font-size: 50px;
+}
+
+.description p {
+  font-style: italic;
+}
+
+.description h2 {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .right-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .right-container div {
+    padding: 20px;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% { opacity: .1; }
+  50% { opacity: .5; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade {
+  0% { opacity: .1; }
+  50% { opacity: .5; }
+  100% { opacity: 1; }
+}
